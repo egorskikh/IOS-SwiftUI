@@ -1,16 +1,22 @@
 # IOS-SwiftUI
 
 <p align='center'>
-This repository was written based on this book.
+This repository was written based on this books.
 <p align='center'>
 </p>
 
 <p align='center'>
+  
 <a href="https://www.raywenderlich.com/books/swiftui-apprentice" target="_blank">
-<img src="https://img.shields.io/badge/SwiftUI-yellow"/>
+<img src="https://img.shields.io/badge/SwiftUI Apprentice-yellow"/>
+  
+<a href="https://www.raywenderlich.com/books/swiftui-by-tutorials" target="_blank">
+<img src="https://img.shields.io/badge/SwiftUI by Tutorials-yellowgreen"/>
+  
 <p align='center'>
 </p>
-  
+
+# SwiftUI Apprentice
 ## Table of Contents: Overview
 > Section I: Your first app: HIITFit
 - [Checking Your Tools](https://github.com/egorskikh/IOS-SwiftUI#checking-your-tools)
@@ -45,7 +51,43 @@ This repository was written based on this book.
 -  Widgets
 <br> </br>
 
-## Table of Contents: Extended
+# SwiftUI by Tutorials
+## Table of Contents: Overview
+> Section I: Diving Into SwiftUI
+- Introduction
+- Getting Started
+- Diving Deeper Into SwiftUI
+- Testing & Debugging
+<br> </br>
+> Section II: Building Blocks of SwiftUI
+- Intro to Controls: Text & Image
+- Controls & User Input
+- Introducing Stacks & Containers
+<br> </br>
+> Section III: State & Data Flow
+- State & Data Flow — Part I
+- State & Data Flow – Part II
+- More User Input & App Storage
+- Gestures
+- Accessibility
+<br> </br>
+> Section IV: Navigation & Data Display
+- Navigation
+- Lists
+- Grids
+- Sheets & Alert Views
+<br> </br>
+> Section V: UI Extensions
+- Drawing & Custom Graphics
+- Animations & View Transitions
+- Complex Interfaces
+<br> </br>
+> Section VI: SwiftUI for macOS
+- Building a Mac App
+- Converting an iOS App to macOS
+<br> </br>
+
+# SwiftUI Apprentice. Table of Contents: Extended
 ## **Checking Your Tools**
 ### Key points
 - [implementation](https://github.com/egorskikh/IOS-SwiftUI/tree/main/Section%201.%20HIITFit/01-checking-your-tools)
@@ -60,3 +102,5 @@ This repository was written based on this book.
 - Вы должны добавить учетную запись Apple ID в настройках Xcode, чтобы запустить приложение на устройстве iOS.
 - При первом запуске проекта на устройстве iOS Apple требует, чтобы вы выполнили несколько шагов «Доверие».
 <br> </br>
+
+# SwiftUI by Tutorials. Table of Contents: Extended
