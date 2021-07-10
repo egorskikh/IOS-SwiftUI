@@ -18,73 +18,100 @@ This repository was written based on this books.
 
 # SwiftUI Apprentice
 ## Table of Contents: Overview
-> Section I: Your first app: HIITFit
-- [Checking Your Tools](https://github.com/egorskikh/IOS-SwiftUI#checking-your-tools)
-- Planning a Paged App 
-- Prototyping the Main View
-- Prototyping Supplementary Views 
-- Organizing Your App's Data
-- Adding Functionality to Your App
-- Observing Objects 
-- Saving Settings 
-- Saving History Data
-- Refining Your App
-- Understanding Property Wrappers
-- Apple App Development Ecosystem
-<br> </br>
-> Section II: Your second app: Cards
-- Outlining a Photo Collage App
-- Gestures
-- Structures, Classes & Protocols
-- Adding Assets to Your App
-- Interfacing With UIKit
-- Paths & Custom Shapes
-- Saving Files
-- Delightful UX — Layout 
-- Delightful UX — Final Touches 
-<br> </br>
-> Section III: Your third app: RWFreeView
-- Lists & Navigation
-- Just Enough Web Stuff 
-- Downloading Data 
-- Implementing Filter Options 
--  Widgets
-<br> </br>
+| Section I: | HIITFit | 
+| ------------- | ------------- | 
+| Checking Your Tools | [implementation](https://github.com/egorskikh/IOS-SwiftUI#checking-your-tools) | 
+| Planning a Paged App | [implementation](-) |
+| Prototyping the Main View | [implementation](-) | 
+| Prototyping Supplementary Views  | [implementation](-) |
+| Organizing Your App's Data | [implementation](-) | 
+| Adding Functionality to Your App | [implementation](-) |
+| Observing Objects  | [implementation](-) | 
+| Saving Settings  | [implementation](-) |
+| Saving History Data | [implementation](-) | 
+| Refining Your App | [implementation](-) |
+| Understanding Property Wrappers | [implementation](-) | 
+| Apple App Development Ecosystem | [implementation](-) |
+  
+<br> </br>  
+  
+| Section II: | Cards | 
+| ------------- | ------------- | 
+| Outlining a Photo Collage App | [implementation](-) | 
+| Gestures | [implementation](-) |
+| Structures, Classes & Protocols | [implementation](-) | 
+| Adding Assets to Your App  | [implementation](-) |
+| Organizing Your App's Data | [implementation](-) | 
+| Interfacing With UIKit | [implementation](-) |
+| Paths & Custom Shapes | [implementation](-) | 
+| Saving Files | [implementation](-) |
+| Delightful UX — Layout | [implementation](-) | 
+| Delightful UX — Final Touches | [implementation](-) |
+  
+<br> </br> 
+  
+| Section III | Your third app: RWFreeView | 
+| ------------- | ------------- | 
+| Lists & Navigation | [implementation](-) | 
+| Just Enough Web Stuff | [implementation](-) |
+| Downloading Data | [implementation](-) | 
+| Implementing Filter Options | [implementation](-) |
+| Widgets | [implementation](-) | 
+  
+
 
 # SwiftUI by Tutorials
 ## Table of Contents: Overview
-> Section I: Diving Into SwiftUI
-- Introduction
-- Getting Started
-- Diving Deeper Into SwiftUI
-- Testing & Debugging
+
+| Section I: | Diving Into SwiftUI | 
+| ------------- | ------------- | 
+| Introduction | [implementation](-) | 
+| Getting Started | [implementation](-) |
+| Diving Deeper Into SwiftUI | [implementation](-) | 
+| Testing & Debugging | [implementation](-) |
+
 <br> </br>
-> Section II: Building Blocks of SwiftUI
-- Intro to Controls: Text & Image
-- Controls & User Input
-- Introducing Stacks & Containers
+ 
+| Section II: | Building Blocks of SwiftUI | 
+| ------------- | ------------- | 
+| Intro to Controls: Text & Image | [implementation](-) | 
+| Controls & User Input | [implementation](-) |
+| Introducing Stacks & Containers | [implementation](-) | 
+
 <br> </br>
-> Section III: State & Data Flow
-- State & Data Flow — Part I
-- State & Data Flow – Part II
-- More User Input & App Storage
-- Gestures
-- Accessibility
+
+| Section III: | State & Data Flow | 
+| ------------- | ------------- | 
+| State & Data Flow — Part I | [implementation](-) | 
+| State & Data Flow – Part II | [implementation](-) |
+| More User Input & App Storage | [implementation](-) | 
+| Gestures | [implementation](-) |
+| Accessibility | [implementation](-) | 
+
 <br> </br>
-> Section IV: Navigation & Data Display
-- Navigation
-- Lists
-- Grids
-- Sheets & Alert Views
+
+| Section IV: | Navigation & Data Display | 
+| ------------- | ------------- | 
+| Navigation | [implementation](-) | 
+| Lists | [implementation](-) |
+| Grids| [implementation](-) | 
+| Sheets & Alert Views | [implementation](-) |
+
 <br> </br>
-> Section V: UI Extensions
-- Drawing & Custom Graphics
-- Animations & View Transitions
-- Complex Interfaces
+
+| Section V: | UI Extensions | 
+| ------------- | ------------- | 
+| Drawing & Custom Graphics | [implementation](-) | 
+| Animations & View Transitions | [implementation](-) |
+| Complex Interfaces | [implementation](-) |
+
 <br> </br>
-> Section VI: SwiftUI for macOS
-- Building a Mac App
-- Converting an iOS App to macOS
+
+| Section VI: | SwiftUI for macOS | 
+| ------------- | ------------- | 
+| Building a Mac App | [implementation](-) | 
+| Converting an iOS App to macOS | [implementation](-) |
+
 <br> </br>
 
 # SwiftUI Apprentice. Table of Contents: Extended
