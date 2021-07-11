@@ -21,7 +21,7 @@ This repository was written based on this books.
 | Section I: | HIITFit | 
 | ------------- | ------------- | 
 | Checking Your Tools | [detailed](https://github.com/egorskikh/IOS-SwiftUI#checking-your-tools) | 
-| Planning a Paged App | [detailed](-) |
+| Planning a Paged App | [detailed](https://github.com/egorskikh/IOS-SwiftUI#planning-a-paged-app) |
 | Prototyping the Main View | [detailed](-) | 
 | Prototyping Supplementary Views  | [detailed](-) |
 | Organizing Your App's Data | [detailed](-) | 
@@ -32,8 +32,6 @@ This repository was written based on this books.
 | Refining Your App | [detailed](-) |
 | Understanding Property Wrappers | [detailed](-) | 
 | Apple App Development Ecosystem | [detailed](-) |
-  
-<br> </br>  
   
 | Section II: | Cards | 
 | ------------- | ------------- | 
@@ -47,10 +45,8 @@ This repository was written based on this books.
 | Saving Files | [detailed](-) |
 | Delightful UX — Layout | [detailed](-) | 
 | Delightful UX — Final Touches | [detailed](-) |
-  
-<br> </br> 
-  
-| Section III | Your third app: RWFreeView | 
+
+| Section III | RWFreeView | 
 | ------------- | ------------- | 
 | Lists & Navigation | [detailed](-) | 
 | Just Enough Web Stuff | [detailed](-) |
@@ -58,8 +54,8 @@ This repository was written based on this books.
 | Implementing Filter Options | [detailed](-) |
 | Widgets | [detailed](-) | 
   
-
-
+  
+  
 # SwiftUI by Tutorials
 ## Table of Contents: Overview
 
@@ -70,15 +66,11 @@ This repository was written based on this books.
 | Diving Deeper Into SwiftUI | [detailed](-) | 
 | Testing & Debugging | [detailed](-) |
 
-<br> </br>
- 
 | Section II: | Building Blocks of SwiftUI | 
 | ------------- | ------------- | 
 | Intro to Controls: Text & Image | [detailed](-) | 
 | Controls & User Input | [detailed](-) |
 | Introducing Stacks & Containers | [detailed](-) | 
-
-<br> </br>
 
 | Section III: | State & Data Flow | 
 | ------------- | ------------- | 
@@ -87,9 +79,7 @@ This repository was written based on this books.
 | More User Input & App Storage | [detailed](-) | 
 | Gestures | [detailed](-) |
 | Accessibility | [detailed](-) | 
-
-<br> </br>
-
+  
 | Section IV: | Navigation & Data Display | 
 | ------------- | ------------- | 
 | Navigation | [detailed](-) | 
@@ -97,15 +87,11 @@ This repository was written based on this books.
 | Grids| [detailed](-) | 
 | Sheets & Alert Views | [detailed](-) |
 
-<br> </br>
-
 | Section V: | UI Extensions | 
 | ------------- | ------------- | 
 | Drawing & Custom Graphics | [detailed](-) | 
 | Animations & View Transitions | [detailed](-) |
 | Complex Interfaces | [detailed](-) |
-
-<br> </br>
 
 | Section VI: | SwiftUI for macOS | 
 | ------------- | ------------- | 
@@ -129,5 +115,18 @@ This repository was written based on this books.
 - Вы должны добавить учетную запись Apple ID в настройках Xcode, чтобы запустить приложение на устройстве iOS.
 - При первом запуске проекта на устройстве iOS Apple требует, чтобы вы выполнили несколько шагов «Доверие».
 <br> </br>
+
+# Planning a Paged App
+### Key points
+- [implementation](https://github.com/egorskikh/IOS-SwiftUI/tree/main/Section%201.%20HIITFit/02-planning-a-paged-app/HIITFit)
+- Спланируйте свое приложение, указав, что увидит пользователь и что будет делать приложение.
+- Создайте свое приложение с представлениями и вложенными представлениями, настроенными с помощью модификаторов.
+- Холст и редактор кода всегда синхронизированы: изменения, которые вы вносите в один, также отражаются в другом.
+- Размещение нескольких представлений по вертикали в VStack или по горизонтали в HStack.
+- Инспектор атрибутов помогает вам изменять вид или предварительный просмотр.
+- ForEach позволяет перебирать полуоткрытый диапазон чисел.
+- TabView может вести себя как вкладка или как контроллер страницы.
+- Вы можете предварительно просмотреть или просмотреть изображение в реальном времени на холсте.
+  
 
 # SwiftUI by Tutorials. Table of Contents: Extended
