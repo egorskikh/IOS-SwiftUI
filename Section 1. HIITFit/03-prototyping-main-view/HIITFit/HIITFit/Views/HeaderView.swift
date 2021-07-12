@@ -31,61 +31,37 @@
 /// THE SOFTWARE.
 
 import SwiftUI
-import AVKit
 
-struct ExerciseView: View {
-    let videoNames = ["squat", "step-up", "burpee", "sun-salute"]
-    let exerciseNames = ["Squat", "Step Up", "Burpee", "Sun Salute"]
-    let index: Int
-    let interval: TimeInterval = 30
+struct HeaderView: View {
+
+    let exerciseName: String
 
     var body: some View {
-
-        GeometryReader { geometry in
-            VStack {
-                
-                // 1
-                HeaderView(exerciseName: exerciseNames[index])
-                    .padding(.bottom)
-
-                // 2
-                if let url = Bundle.main.url(forResource: videoNames[index],
-                                             withExtension: "mp4") {
-                    VideoPlayer(player: AVPlayer(url: url))
-                        .frame(height: geometry.size.height * 0.45)
-                } else {
-                    Text("Couldn’t find \(videoNames[index]).mp4")
-                        .foregroundColor(.red)
-                }
-
-                // 3
-                Text(Date().addingTimeInterval(interval), style: .timer)
-                    .font(.system(size: 40))
-
-                // 4
-                Button("Start/Done") { }
-                    .font(.title3)
-                    .padding()
-
-                // 5
-                RatingView()
-                    .padding()
-
-                Spacer()
-                // 6
-                Button("History") { }
-                    .padding(.bottom)
-
+        VStack {
+            Text(exerciseName)
+                .font(.largeTitle)
+            HStack {
+                Image(systemName: "1.circle")
+                Image(systemName: "2.circle")
+                Image(systemName: "3.circle")
+                Image(systemName: "4.circle")
             }
+            .font(.title2)
         }
-
     }
 }
 
-struct ExerciseView_Previews: PreviewProvider {
+struct HeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ExerciseView(index: 0)
+        Group {
+            HeaderView(exerciseName: "Squat")
+                .previewLayout(/*@START_MENU_TOKEN@*/.sizeThatFits/*@END_MENU_TOKEN@*/)
+
+            HeaderView(exerciseName: "Squat")
+                .preferredColorScheme(.dark)
+                .environment(\.sizeCategory, .accessibilityLarge)
+                .previewLayout(/*@START_MENU_TOKEN@*/.sizeThatFits/*@END_MENU_TOKEN@*/)
+            
+        }
     }
 }
-
-
