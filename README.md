@@ -22,7 +22,7 @@ This repository was written based on this books.
 | ------------- | ------------- | 
 | Checking Your Tools | [detailed](https://github.com/egorskikh/IOS-SwiftUI#checking-your-tools) | 
 | Planning a Paged App | [detailed](https://github.com/egorskikh/IOS-SwiftUI#planning-a-paged-app) |
-| Prototyping the Main View | [detailed](-) | 
+| Prototyping the Main View | [detailed](https://github.com/egorskikh/IOS-SwiftUI#prototyping-the-main-view) | 
 | Prototyping Supplementary Views  | [detailed](-) |
 | Organizing Your App's Data | [detailed](-) | 
 | Adding Functionality to Your App | [detailed](-) |
@@ -127,6 +127,21 @@ This repository was written based on this books.
 - ForEach позволяет перебирать полуоткрытый диапазон чисел.
 - TabView может вести себя как вкладка или как контроллер страницы.
 - Вы можете предварительно просмотреть или просмотреть изображение в реальном времени на холсте.
-  
+<br> </br>
+
+## Prototyping the Main View
+### Key points
+- [implementation](https://github.com/egorskikh/IOS-SwiftUI/tree/main/Section%201.%20HIITFit/03-prototyping-main-view/HIITFit)
+- SwiftUI декларативен: просто объявляйте представления в том порядке, в котором вы хотите, чтобы они отображались.
+- Создавайте отдельные представления для элементов вашего пользовательского интерфейса. Это упрощает чтение и сопровождение кода.
+- Используйте соглашение SwiftUI о размещении каждого модификатора в отдельной строке. Это упрощает перемещение или удаление модификатора.
+- Xcode и SwiftUI предоставляют автоматические предложения и значения по умолчанию, которые часто подходят вам.
+- Позвольте Xcode помочь вам избежать ошибок: используйте меню Command для встраивания представления в стек или в замыкание if-else или извлеките представление во вложенное представление.
+- Приложение **SF Symbols** предоставляет изображения значков, которые можно настроить как текст.
+- **Previews** - это простой способ проверить, как ваш интерфейс выглядит для разных пользователей.
+настройки.
+- **Swift** - это строго типизированный язык программирования.
+- **GeometryReader** позволяет вам устанавливать размеры вида относительно размеров экрана.
+<br> </br>
 
 # SwiftUI by Tutorials. Table of Contents: Extended
