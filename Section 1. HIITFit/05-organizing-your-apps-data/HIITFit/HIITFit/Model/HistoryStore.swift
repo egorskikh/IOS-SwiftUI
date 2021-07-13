@@ -30,49 +30,23 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import SwiftUI
+import Foundation
 
-struct HistoryView: View {
-    
-    let today = Date()
-    let yesterday = Date().addingTimeInterval(-86400)
+struct ExerciseDay: Identifiable {
+    let id = UUID()
+    let date: Date
+    var exercises: [String] = []
+}
 
-    let history = HistoryStore()
-    let exercises1 = ["Squat", "Step Up", "Burpee", "Sun Salute"]
-    let exercises2 = ["Squat", "Step Up", "Burpee"]
+struct HistoryStore {
+    var exerciseDays: [ExerciseDay] = []
 
-    var body: some View {
-        ZStack(alignment: .topTrailing) {
-            // swiftlint:disable:next multiple_closures_with_trailing_closure
-            Button(action: {}) {
-                Image(systemName: "xmark.circle")
-            }
-            .font(.title)
-            .padding(.trailing)
-            VStack {
-                Text("History")
-                    .font(.title)
-                    .padding()
-                Form {
-                    ForEach(history.exerciseDays) { day in
-                        Section(
-                            header:
-                                Text(day.date.formatted(as: "MMM d"))
-                                .font(.headline)) {
-                            ForEach(day.exercises, id: \.self) { exercise in
-                                Text(exercise)
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    init() {
+      #if DEBUG
+      createDevData()
+      #endif
     }
 
 }
 
-struct HistoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        HistoryView()
-    }
-}
+
