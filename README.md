@@ -23,7 +23,7 @@ This repository was written based on this books.
 | Checking Your Tools | [detailed](https://github.com/egorskikh/IOS-SwiftUI#checking-your-tools) | 
 | Planning a Paged App | [detailed](https://github.com/egorskikh/IOS-SwiftUI#planning-a-paged-app) |
 | Prototyping the Main View | [detailed](https://github.com/egorskikh/IOS-SwiftUI#prototyping-the-main-view) | 
-| Prototyping Supplementary Views  | [detailed](-) |
+| Prototyping Supplementary Views  | [detailed](https://github.com/egorskikh/IOS-SwiftUI#prototyping-supplementary-views) |
 | Organizing Your App's Data | [detailed](-) | 
 | Adding Functionality to Your App | [detailed](-) |
 | Observing Objects  | [detailed](-) | 
@@ -101,6 +101,7 @@ This repository was written based on this books.
 <br> </br>
 
 # SwiftUI Apprentice. Table of Contents: Extended
+  
 ## **Checking Your Tools**
 ### Key points
 - [implementation](https://github.com/egorskikh/IOS-SwiftUI/tree/main/Section%201.%20HIITFit/01-checking-your-tools)
@@ -114,6 +115,7 @@ This repository was written based on this books.
 - Вы можете запустить приложение на моделируемом устройстве или создать предварительный просмотр конкретных устройств.
 - Вы должны добавить учетную запись Apple ID в настройках Xcode, чтобы запустить приложение на устройстве iOS.
 - При первом запуске проекта на устройстве iOS Apple требует, чтобы вы выполнили несколько шагов «Доверие».
+  
 <br> </br>
 
 # Planning a Paged App
@@ -127,6 +129,7 @@ This repository was written based on this books.
 - ForEach позволяет перебирать полуоткрытый диапазон чисел.
 - TabView может вести себя как вкладка или как контроллер страницы.
 - Вы можете предварительно просмотреть или просмотреть изображение в реальном времени на холсте.
+  
 <br> </br>
 
 ## Prototyping the Main View
@@ -142,6 +145,21 @@ This repository was written based on this books.
 настройки.
 - **Swift** - это строго типизированный язык программирования.
 - **GeometryReader** позволяет вам устанавливать размеры вида относительно размеров экрана.
+
+<br> </br>
+
+## Prototyping Supplementary Views
+###### Key points
+- [implementation](https://github.com/egorskikh/IOS-SwiftUI/tree/main/Section%201.%20HIITFit/04-prototyping-supplementary-views/HIITFit)
+- Тип Date имеет множество встроенных свойств и методов. Вам необходимо настроить DateFormatter для создания значимого текста, который будет отображаться вашим пользователям.
+- Используйте представление контейнера формы, чтобы быстро разложить данные таблицы.
+- ForEach позволяет перебирать элементы коллекции.
+- ZStack полезен для удержания видов в одном слое по центру, в то время как виды в другом слое смещаются к краям.
+- Вы можете указать значения вертикального выравнивания для HStack, значения горизонтального выравнивания для VStack и комбинированные значения выравнивания для ZStack.
+- Xcode помогает быстро и безопасно реорганизовать имя параметра.
+- Изображение часто нуждается в тех же трех модификаторах. Вы можете создать собственный модификатор, чтобы не повторяться.
+- Кнопка имеет метку и действие. Вы можете определить Button несколькими способами.
+
 <br> </br>
 
 # SwiftUI by Tutorials. Table of Contents: Extended
