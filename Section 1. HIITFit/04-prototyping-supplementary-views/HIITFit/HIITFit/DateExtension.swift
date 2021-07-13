@@ -42,15 +42,17 @@ extension Date {
     return dateFormatter.string(from: self)
   }
 
+    /**
+     Format a date using the specified format.
+     - parameters:
+          - format: A date pattern string like "MM dd".
+     */
   var yearMonthDay: String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy MM dd"
     return dateFormatter.string(from: self)
   }
 
-  /// Check another date is the same year, month and day.
-  ///   - parameters:
-  ///     - day: The other date.
   func isSameDay(as day: Date) -> Bool {
     return self.yearMonthDay == day.yearMonthDay
   }

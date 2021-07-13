@@ -31,53 +31,58 @@
 /// THE SOFTWARE.
 
 import SwiftUI
-import AVKit
 
-struct ExerciseView: View {
-  let videoNames = ["squat", "step-up", "burpee", "sun-salute"]
-  let exerciseNames = ["Squat", "Step Up", "Burpee", "Sun Salute"]
-  let index: Int
-  let interval: TimeInterval = 30
+struct HistoryView: View {
 
-  var body: some View {
-    GeometryReader { geometry in
-      VStack {
+    let today = Date()
+    let yesterday = Date().addingTimeInterval(-86400)
+    let exercises1 = ["Squat", "Step Up", "Burpee", "Sun Salute"]
+    let exercises2 = ["Squat", "Step Up", "Burpee"]
 
-        HeaderView(titleText: exerciseNames[index])
-          .padding(.bottom)
+    var body: some View {
 
-        if let url = Bundle.main.url(
-          forResource: videoNames[index],
-          withExtension: "mp4") {
-          VideoPlayer(player: AVPlayer(url: url))
-            .frame(height: geometry.size.height * 0.45)
-        } else {
-          Text("Couldn't find \(videoNames[index]).mp4")
-            .foregroundColor(.red)
+        ZStack(alignment: .topTrailing) {
+            Button(action: {}) {
+              Image(systemName: "xmark.circle")
+            }
+            .font(.title)
+            .padding(.trailing)
+
+            VStack {
+                Text("History")
+                    .font(.title)
+                    .padding()
+                Form {
+                    // 1
+                    Section(
+                        header:
+                            Text(today.formatted(as: "MMM d"))
+                            .font(.headline)) {
+
+                        ForEach(exercises1, id: \.self) { exercise in
+                         Text(exercise)
+                       }
+
+                    }
+                    // 2
+                    Section(
+                        header:
+                            Text(yesterday.formatted(as: "MMM d"))
+                            .font(.headline)) {
+
+                        ForEach(exercises2, id: \.self) { exercise in
+                         Text(exercise)
+                       }
+                    }
+                }
+            }
         }
 
-        Text(Date().addingTimeInterval(interval), style: .timer)
-          .font(.system(size: 20))
-
-        Button("Start/Done") { }
-          .font(.title3)
-          .padding()
-
-        RatingView()
-          .padding()
-
-        Spacer()
-
-        Button("History") { }
-          .padding(.bottom)
-
-      }
     }
-  }
 }
 
-struct ExerciseView_Previews: PreviewProvider {
-  static var previews: some View {
-    ExerciseView(index: 0)
-  }
+struct HistoryView_Previews: PreviewProvider {
+    static var previews: some View {
+        HistoryView()
+    }
 }

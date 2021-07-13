@@ -31,53 +31,37 @@
 /// THE SOFTWARE.
 
 import SwiftUI
-import AVKit
 
-struct ExerciseView: View {
-  let videoNames = ["squat", "step-up", "burpee", "sun-salute"]
-  let exerciseNames = ["Squat", "Step Up", "Burpee", "Sun Salute"]
-  let index: Int
-  let interval: TimeInterval = 30
+struct SuccessView: View {
 
-  var body: some View {
-    GeometryReader { geometry in
-      VStack {
-
-        HeaderView(titleText: exerciseNames[index])
-          .padding(.bottom)
-
-        if let url = Bundle.main.url(
-          forResource: videoNames[index],
-          withExtension: "mp4") {
-          VideoPlayer(player: AVPlayer(url: url))
-            .frame(height: geometry.size.height * 0.45)
-        } else {
-          Text("Couldn't find \(videoNames[index]).mp4")
-            .foregroundColor(.red)
+    var body: some View {
+        ZStack {
+            VStack {
+                Image(systemName: "hand.raised.fill")
+                    .resizedToFill(width: 75, height: 75)
+                    .foregroundColor(.purple)
+                Text("High Five!")
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                Text("""
+            Good job completing all four exercises!
+            Remember tomorrow's another day.
+            So eat well and get some rest.
+            """)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.gray)
+            }
+            VStack {
+                Spacer()
+                Button("Continue") { }
+            }
+            .padding()
         }
-
-        Text(Date().addingTimeInterval(interval), style: .timer)
-          .font(.system(size: 20))
-
-        Button("Start/Done") { }
-          .font(.title3)
-          .padding()
-
-        RatingView()
-          .padding()
-
-        Spacer()
-
-        Button("History") { }
-          .padding(.bottom)
-
-      }
     }
-  }
 }
 
-struct ExerciseView_Previews: PreviewProvider {
-  static var previews: some View {
-    ExerciseView(index: 0)
-  }
+struct SuccessView_Previews: PreviewProvider {
+    static var previews: some View {
+        SuccessView()
+    }
 }
