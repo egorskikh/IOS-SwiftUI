@@ -24,7 +24,7 @@ This repository was written based on this books.
 | Planning a Paged App | [detailed](https://github.com/egorskikh/IOS-SwiftUI#planning-a-paged-app) |
 | Prototyping the Main View | [detailed](https://github.com/egorskikh/IOS-SwiftUI#prototyping-the-main-view) | 
 | Prototyping Supplementary Views  | [detailed](https://github.com/egorskikh/IOS-SwiftUI#prototyping-supplementary-views) |
-| Organizing Your App's Data | [detailed](-) | 
+| Organizing Your App's Data | [detailed](https://github.com/egorskikh/IOS-SwiftUI#organizing-your-apps-data) | 
 | Adding Functionality to Your App | [detailed](-) |
 | Observing Objects  | [detailed](-) | 
 | Saving Settings | [detailed](-) |
@@ -149,7 +149,7 @@ This repository was written based on this books.
 <br> </br>
 
 ## Prototyping Supplementary Views
-###### Key points
+### Key points
 - [implementation](https://github.com/egorskikh/IOS-SwiftUI/tree/main/Section%201.%20HIITFit/04-prototyping-supplementary-views/HIITFit)
 - Тип Date имеет множество встроенных свойств и методов. Вам необходимо настроить DateFormatter для создания значимого текста, который будет отображаться вашим пользователям.
 - Используйте представление контейнера формы, чтобы быстро разложить данные таблицы.
@@ -161,5 +161,52 @@ This repository was written based on this books.
 - Кнопка имеет метку и действие. Вы можете определить Button несколькими способами.
 
 <br> </br>
+
+## Organizing Your App's Data
+### Key points
+- [implementation](https://github.com/egorskikh/IOS-SwiftUI/tree/main/Section%201.%20HIITFit/05-organizing-your-apps-data/HIITFit)
+- Чтобы использовать коллекцию в цикле ForEach, у нее должен быть способ однозначно идентифицировать каждый из ее элементов. Самый простой способ - сделать его совместимым с Identifiable и включить id: UUID в качестве свойства.
+- Перечисление - это именованный тип, полезный для группировки связанных значений, поэтому компилятор может помочь вам избежать таких ошибок, как неправильное написание строки.
+- Используйте директивы компилятора для создания данных для разработки только во время разработки, а не в окончательной версии вашего приложения.
+- Предварительный просмотр содержимого - удобное место для хранения кода и данных, которые вы используете только во время разработки. Его содержимое не будет включено в окончательную версию вашего приложения.
+- Локализуйте свое приложение, чтобы привлечь к нему более широкую аудиторию. Замените пользовательский текст экземплярами NSLocalizedString, создайте файл English Localizable.strings, а затем используйте его в качестве файла ресурсов справочного языка для добавления других языков.
+
+<br> </br>
+
+## Adding Functionality to Your App 
+### Key points
+
+<br> </br>
+
+## Observing Objects
+### Key points
+
+<br> </br>
+
+## Saving Settings
+### Key points
+
+<br> </br>
+
+## Saving History Data
+### Key points
+
+<br> </br>
+
+## Refining Your App 
+### Key points
+
+<br> </br>
+
+## Understanding Property Wrappers 
+### Key points
+
+<br> </br>
+
+## Apple App Development Ecosystem 
+### Key points
+
+<br> </br>
+
 
 # SwiftUI by Tutorials. Table of Contents: Extended
