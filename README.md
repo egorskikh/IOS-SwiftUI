@@ -27,7 +27,7 @@ This repository was written based on this books.
 | Organizing Your App's Data | [detailed](https://github.com/egorskikh/IOS-SwiftUI#organizing-your-apps-data) | 
 | Adding Functionality to Your App | [detailed](https://github.com/egorskikh/IOS-SwiftUI#adding-functionality-to-your-app) |
 | Observing Objects  | [detailed](https://github.com/egorskikh/IOS-SwiftUI#observing-objects) | 
-| Saving Settings | [detailed](-) |
+| Saving Settings | [detailed](https://github.com/egorskikh/IOS-SwiftUI#saving-settings) |
 | Saving History Data | [detailed](-) | 
 | Refining Your App | [detailed](-) |
 | Understanding Property Wrappers | [detailed](-) | 
@@ -196,6 +196,12 @@ This repository was written based on this books.
 
 ## Saving Settings
 ### Key points
+- [implementation](https://github.com/egorskikh/IOS-SwiftUI/tree/main/Section%201.%20HIITFit/08-saving-settings/HIITFit)
+- У вас есть несколько вариантов, где хранить данные. Вы должны использовать @AppStorage и @SceneStorage для облегченных данных и списки свойств, JSON или Core Data для основных данных приложения, которые со временем увеличиваются.
+- Ваше приложение изолировано, поэтому никакое другое приложение не может получить доступ к его данным. Вы также не можете получить доступ к данным из любого другого приложения. Исполняемый файл вашего приложения хранится в каталоге набора приложений, доступном только для чтения, со всеми активами вашего приложения. Вы можете получить доступ к каталогам Documents и Library вашего приложения с помощью FileManager.
+- В списках свойств хранятся сериализованные объекты. Если вы хотите сохранить пользовательские типы в файле списка свойств, вы должны сначала преобразовать их в тип данных, распознаваемый файлом списка свойств, например String, Boolean или Data.
+- Управление строкой может быть довольно сложным, но Swift предоставляет множество вспомогательных методов для извлечения части строки или добавления строки к другой строке.
+- Управляйте сценами с помощью @SceneStorage. Ваше приложение хранит данные для каждой сцены. На iPad и macOS может быть несколько сцен, но приложение, запущенное на iPhone, имеет только одну.
 
 <br> </br>
 
