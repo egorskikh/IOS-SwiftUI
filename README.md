@@ -25,7 +25,7 @@ This repository was written based on this books.
 | Prototyping the Main View | [detailed](https://github.com/egorskikh/IOS-SwiftUI#prototyping-the-main-view) | 
 | Prototyping Supplementary Views  | [detailed](https://github.com/egorskikh/IOS-SwiftUI#prototyping-supplementary-views) |
 | Organizing Your App's Data | [detailed](https://github.com/egorskikh/IOS-SwiftUI#organizing-your-apps-data) | 
-| Adding Functionality to Your App | [detailed](-) |
+| Adding Functionality to Your App | [detailed](https://github.com/egorskikh/IOS-SwiftUI#adding-functionality-to-your-app) |
 | Observing Objects  | [detailed](-) | 
 | Saving Settings | [detailed](-) |
 | Saving History Data | [detailed](-) | 
@@ -175,6 +175,13 @@ This repository was written based on this books.
 
 ## Adding Functionality to Your App 
 ### Key points
+- [implementation](https://github.com/egorskikh/IOS-SwiftUI/tree/main/Section%201.%20HIITFit/06-adding-functionality-to-your-app/HIITFit)
+- Декларативная разработка приложений означает, что вы объявляете, как должны выглядеть представления в пользовательском интерфейсе, а также от того, от каких данных они зависят. Фреймворк SwiftUI заботится о создании представлений, когда они должны отображаться, и обновлении их при каждом изменении данных, от которых они зависят.
+- Доступ к данным = зависимость: чтение части данных в вашем представлении создает зависимость для этих данных в этом представлении.
+- Единый источник истины: каждая часть данных имеет источник истины, внутренний или внешний. Независимо от того, где находится источник правды, у вас всегда должен быть единственный источник правды.
+- Оболочки свойств дополняют поведение свойств: **@State**, **@Binding** и **@EnvironmentObject** объявляют зависимость представления от данных, представленных свойством.
+- @Binding объявляет зависимость от свойства @State, принадлежащего другому представлению. @EnvironmentObject объявляет зависимость от некоторых общих данных, таких как ссылочный тип, соответствующий **ObservableObject**.
+- Используйте логические свойства **@State** для отображения и скрытия модальных листов или подпредставлений. Используйте @Environment (\. PresentationMode) как еще один способ закрыть модальный лист.
 
 <br> </br>
 
