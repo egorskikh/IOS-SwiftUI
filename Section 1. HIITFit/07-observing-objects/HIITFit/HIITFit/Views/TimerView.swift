@@ -30,25 +30,37 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
+import SwiftUI
 
-extension HistoryStore {
-   func createDevData() {
-    // Development data
-    exerciseDays = [
-      ExerciseDay(
-        date: Date().addingTimeInterval(-86400),
-        exercises: [
-          Exercise.exercises[0].exerciseName,
-          Exercise.exercises[1].exerciseName,
-          Exercise.exercises[2].exerciseName
-        ]),
-      ExerciseDay(
-        date: Date().addingTimeInterval(-86400 * 2),
-        exercises: [
-          Exercise.exercises[1].exerciseName,
-          Exercise.exercises[0].exerciseName
-        ])
-    ]
-  }
+struct TimerView: View {
+
+    @State private var timeRemaining = 3 // 1
+    @Binding var timerDone: Bool // 2
+
+    let timer = Timer.publish( // 3
+        every: 1,
+        on: .main,
+        in: .common)
+        .autoconnect() // 4
+    var body: some View {
+        Text("\(timeRemaining)") // 5
+            .font(.system(size: 50, design: .rounded))
+            .padding()
+            .onReceive(timer) { _ in // 6
+                if self.timeRemaining > 0 {
+                    self.timeRemaining -= 1
+                } else {
+                    timerDone = true // 7
+                }
+            }
+
+    }
+}
+
+struct TimerView_Previews: PreviewProvider {
+    static var previews: some View {
+        TimerView(timerDone: .constant(false))
+            .previewLayout(.sizeThatFits)
+
+    }
 }
