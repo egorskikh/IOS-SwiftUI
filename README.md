@@ -26,7 +26,7 @@ This repository was written based on this books.
 | Prototyping Supplementary Views  | [detailed](https://github.com/egorskikh/IOS-SwiftUI#prototyping-supplementary-views) |
 | Organizing Your App's Data | [detailed](https://github.com/egorskikh/IOS-SwiftUI#organizing-your-apps-data) | 
 | Adding Functionality to Your App | [detailed](https://github.com/egorskikh/IOS-SwiftUI#adding-functionality-to-your-app) |
-| Observing Objects  | [detailed](-) | 
+| Observing Objects  | [detailed](https://github.com/egorskikh/IOS-SwiftUI#observing-objects) | 
 | Saving Settings | [detailed](-) |
 | Saving History Data | [detailed](-) | 
 | Refining Your App | [detailed](-) |
@@ -180,13 +180,17 @@ This repository was written based on this books.
 - Доступ к данным = зависимость: чтение части данных в вашем представлении создает зависимость для этих данных в этом представлении.
 - Единый источник истины: каждая часть данных имеет источник истины, внутренний или внешний. Независимо от того, где находится источник правды, у вас всегда должен быть единственный источник правды.
 - Оболочки свойств дополняют поведение свойств: **@State**, **@Binding** и **@EnvironmentObject** объявляют зависимость представления от данных, представленных свойством.
-- @Binding объявляет зависимость от свойства @State, принадлежащего другому представлению. @EnvironmentObject объявляет зависимость от некоторых общих данных, таких как ссылочный тип, соответствующий **ObservableObject**.
-- Используйте логические свойства **@State** для отображения и скрытия модальных листов или подпредставлений. Используйте @Environment (\. PresentationMode) как еще один способ закрыть модальный лист.
+- **@Binding** объявляет зависимость от свойства **@State**, принадлежащего другому представлению. **@EnvironmentObject** объявляет зависимость от некоторых общих данных, таких как ссылочный тип, соответствующий **ObservableObject**.
+- Используйте логические свойства **@State** для отображения и скрытия модальных листов или подпредставлений. Используйте **@Environment** (\. PresentationMode) как еще один способ закрыть модальный лист.
 
 <br> </br>
 
 ## Observing Objects
 ### Key points
+- [implementation](https://github.com/egorskikh/IOS-SwiftUI/tree/main/Section%201.%20HIITFit/07-observing-objects/HIITFit)
+- Создайте таймер, подписавшись на издателя таймера, созданного **Timer.publish(every:tolerance:on:in:options:)**.
+- **@Binding** объявляет зависимость от переменной **@State**, принадлежащей другому представлению. @EnvironmentObject объявляет зависимость от некоторых общих данных, таких как ссылочный тип, соответствующий **ObservableObject**.
+- Используйте **ObservableObject** как **@EnvironmentObject**, чтобы позволить подпредставлениям получать доступ к данным без необходимости передавать параметры.
 
 <br> </br>
 
