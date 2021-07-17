@@ -32,61 +32,58 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
-  @EnvironmentObject var history: HistoryStore
-  @State private var showHistory = false
-  @Binding var selectedTab: Int
+struct IndentView<Content: View>: View {
+  var content: Content
+
+  init(@ViewBuilder content: () -> Content) {
+    self.content = content()
+  }
 
   var body: some View {
-    GeometryReader { geometry in
-      VStack {
-        HeaderView(selectedTab: $selectedTab, titleText: "Welcome")
-        Spacer()
-        ContainerView {
-          VStack {
-            WelcomeView.images
-            WelcomeView.welcomeText
-            getStartedButton
-            Spacer()
-            historyButton
+    ZStack {
+      content
+        .background(
+          GeometryReader { geometry in
+            Circle()
+              .inset(by: -4)
+              .stroke(Color("background"), lineWidth: 8)
+              .shadow(color: Color("drop-shadow").opacity(0.5), radius: 6, x: 6, y: 6)
+              .shadow(color: Color("drop-highlight"), radius: 6, x: -6, y: -6)
+              .foregroundColor(Color("background"))
+              .clipShape(Circle().inset(by: -1))
+              .resized(size: geometry.size)
           }
-        }
-        .frame(height: geometry.size.height * 0.8)
-      }
-      .sheet(isPresented: $showHistory) {
-        HistoryView(showHistory: $showHistory)
-          .environmentObject(history)
-      }
+        )
     }
-  }
-
-  var getStartedButton: some View {
-    RaisedButton(buttonText: "Get Started") {
-      selectedTab = 0
-    }
-    .padding()
-  }
-
-  var historyButton: some View {
-    Button(
-      action: {
-        showHistory = true
-      }, label: {
-        Text("History")
-          .fontWeight(.bold)
-          .padding([.leading, .trailing], 5)
-      })
-      .padding(.bottom, 10)
-      .buttonStyle(EmbossedButtonStyle())
   }
 }
 
-struct WelcomeView_Previews: PreviewProvider {
+private extension View {
+  func resized(size: CGSize) -> some View {
+    self
+      .frame(
+        width: max(size.width, size.height),
+        height: max(size.width, size.height))
+      .offset(y: -max(size.width, size.height) / 2
+        + min(size.width, size.height) / 2)
+  }
+}
+
+struct IndentView_Previews: PreviewProvider {
   static var previews: some View {
-    Group {
-      WelcomeView(selectedTab: .constant(9))
-      WelcomeView(selectedTab: .constant(9))
-        .previewDevice("iPod touch (7th generation)")
+    VStack {
+      IndentView {
+        Text("5")
+          .font(.system(size: 90, design: .rounded))
+          .frame(width: 120, height: 120)
+      }
+      .padding(.bottom, 50)
+      IndentView {
+        Image(systemName: "hare.fill")
+          .font(.largeTitle)
+          .foregroundColor(.purple)
+          .padding(20)
+      }
     }
   }
 }

@@ -32,61 +32,88 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
+struct HistoryBarView: View {
   @EnvironmentObject var history: HistoryStore
-  @State private var showHistory = false
-  @Binding var selectedTab: Int
+
+  @State private var days: [Date] = []
+  @State private var exercisesForWeek: [ExerciseDay] = []
+  @State private var countsForWeek: [Int] = []
+  @State private var datesExercised: [Date] = []
+
+  var maxBarHeight: Int = 300
 
   var body: some View {
     GeometryReader { geometry in
       VStack {
-        HeaderView(selectedTab: $selectedTab, titleText: "Welcome")
-        Spacer()
-        ContainerView {
-          VStack {
-            WelcomeView.images
-            WelcomeView.welcomeText
-            getStartedButton
-            Spacer()
-            historyButton
+        HStack {
+          ForEach(0..<7) { index in
+            bar(day: index, size: geometry.size)
           }
         }
-        .frame(height: geometry.size.height * 0.8)
+        Divider()
+        Spacer()
       }
-      .sheet(isPresented: $showHistory) {
-        HistoryView(showHistory: $showHistory)
-          .environmentObject(history)
+      .onAppear {
+        days = Date().lastSevenDays
+        exercisesForWeek = [ExerciseDay](history.exerciseDays.prefix(7))
+        let counts: [Int] = days.map { day in
+          let foundDate = exercisesForWeek.filter {
+            $0.date.yearMonthDay == day.yearMonthDay
+          }
+          return foundDate.first?.exercises.count ?? 0
+        }
+        assert(counts.count == 7)
+        // remap values to 0 to maxBarHeight
+        let maxValue = max(counts.max() ?? 0, 1)
+        countsForWeek = counts.map {
+          $0 * maxBarHeight / maxValue
+        }
       }
+      .frame(height: geometry.size.height * 0.7)
     }
   }
 
-  var getStartedButton: some View {
-    RaisedButton(buttonText: "Get Started") {
-      selectedTab = 0
+  func bar(day: Int, size: CGSize) -> AnyView {
+    guard days.count > day else {
+      return AnyView(EmptyView())
     }
-    .padding()
-  }
-
-  var historyButton: some View {
-    Button(
-      action: {
-        showHistory = true
-      }, label: {
-        Text("History")
-          .fontWeight(.bold)
-          .padding([.leading, .trailing], 5)
-      })
-      .padding(.bottom, 10)
-      .buttonStyle(EmbossedButtonStyle())
+    let date = days[day]
+    let view = VStack {
+      Spacer()
+      ZStack {
+        if countsForWeek[day] > 0 {
+        RoundedRectangle(cornerRadius: 10)
+          .padding(3)
+          .foregroundColor(Color("background"))
+          .shadow(
+            color: Color("drop-highlight"),
+            radius: 4,
+            x: -4,
+            y: -4)
+          .shadow(
+            color: Color("drop-shadow"),
+            radius: 4,
+            x: 4,
+            y: 4)
+        RoundedRectangle(cornerRadius: 6)
+          .padding(12)
+          .foregroundColor(Color("history-bar"))
+        }
+      }
+      .frame(height: CGFloat(countsForWeek[day]))
+        Text(date.truncatedDayName)
+        Text(date.truncatedDayMonth)
+    }
+    .frame(width: size.width / 9)
+    .font(.caption)
+    .foregroundColor(Color.primary)
+    return AnyView(view)
   }
 }
 
-struct WelcomeView_Previews: PreviewProvider {
+struct HistoryBarView_Previews: PreviewProvider {
   static var previews: some View {
-    Group {
-      WelcomeView(selectedTab: .constant(9))
-      WelcomeView(selectedTab: .constant(9))
-        .previewDevice("iPod touch (7th generation)")
-    }
+    HistoryBarView()
+      .environmentObject(HistoryStore(debugData: true))
   }
 }

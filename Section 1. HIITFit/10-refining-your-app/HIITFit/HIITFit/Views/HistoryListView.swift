@@ -32,61 +32,71 @@
 
 import SwiftUI
 
-struct WelcomeView: View {
+struct HistoryListView: View {
   @EnvironmentObject var history: HistoryStore
-  @State private var showHistory = false
-  @Binding var selectedTab: Int
 
   var body: some View {
-    GeometryReader { geometry in
-      VStack {
-        HeaderView(selectedTab: $selectedTab, titleText: "Welcome")
-        Spacer()
-        ContainerView {
-          VStack {
-            WelcomeView.images
-            WelcomeView.welcomeText
-            getStartedButton
-            Spacer()
-            historyButton
+    ScrollView {
+      ForEach(history.exerciseDays) { day in
+        Section(
+          header:
+            HStack {
+              Text(day.date.formatted(as: "MMM d"))
+                .font(.title3)
+                .fontWeight(.medium)
+                .padding()
+              Spacer()
+            },
+          footer:
+            Divider()
+            .padding(.top, 40)
+        ) {
+          // Only the first four exercises are shown
+          // After Part II, you will be able to add all
+          // exercises in a grid
+          HStack(spacing: 40) {
+            ForEach(0..<min(day.exercises.count, 4)) { index in
+              let exercise = day.exercises[index]
+              VStack {
+                IndentView {
+                  switch exercise {
+                  case "Squat":
+                    Image(systemName: "bolt.fill")
+                      .frame(minWidth: 60)
+                  //                        .padding(15)
+                  case "Step Up":
+                    Image(systemName: "arrow.uturn.up")
+                      .frame(minWidth: 60)
+                  case "Burpee":
+                    Image(systemName: "hare.fill")
+                      .frame(minWidth: 60)
+                  default:
+                    Image(systemName: "sun.max.fill")
+                      .frame(minWidth: 60)
+                  //                        .padding(15)
+                  }
+                }
+                .foregroundColor(Color("exercise-history"))
+                .padding(.bottom, 20)
+                Text(exercise)
+                  .font(.caption)
+                  .fontWeight(.light)
+                  .foregroundColor(Color.primary)
+              }
+            }
           }
+          .frame(maxWidth: .infinity)
+          .font(.headline)
         }
-        .frame(height: geometry.size.height * 0.8)
-      }
-      .sheet(isPresented: $showHistory) {
-        HistoryView(showHistory: $showHistory)
-          .environmentObject(history)
       }
     }
-  }
-
-  var getStartedButton: some View {
-    RaisedButton(buttonText: "Get Started") {
-      selectedTab = 0
-    }
-    .padding()
-  }
-
-  var historyButton: some View {
-    Button(
-      action: {
-        showHistory = true
-      }, label: {
-        Text("History")
-          .fontWeight(.bold)
-          .padding([.leading, .trailing], 5)
-      })
-      .padding(.bottom, 10)
-      .buttonStyle(EmbossedButtonStyle())
+    .frame(maxWidth: .infinity)
   }
 }
 
-struct WelcomeView_Previews: PreviewProvider {
+struct HistoryListView_Previews: PreviewProvider {
   static var previews: some View {
-    Group {
-      WelcomeView(selectedTab: .constant(9))
-      WelcomeView(selectedTab: .constant(9))
-        .previewDevice("iPod touch (7th generation)")
-    }
+    HistoryListView()
+      .environmentObject(HistoryStore(debugData: true))
   }
 }
